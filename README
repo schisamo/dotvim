@@ -1,0 +1,14 @@
+This is the contents of my .vim directory.  It includes my vimrc, which you should symlink to ~/.vimrc in order
+to get the goodness.
+
+It includes several plugins: NERDtree, FuzzyFinder, FuzzyFinderTextmate, lots of color schemes, updated ruby bindings, and more.
+
+To use, copy this directory to ~/.vim and symlink ~/.vim/vimrc to ~/.vimrc.
+
+Once you are running, in command mode: 
+
+,d = Toggle NERDtree
+,t = FuzzyFinderTextmate
+,b = FuzzyBufferFinder
+
+
