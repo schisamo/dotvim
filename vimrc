@@ -40,6 +40,7 @@ set statusline+=0x%-8B                       " character value
 set statusline+=%-14(%l,%c%V%)               " line, character
 set statusline+=%<%P                         " file position
 
+compiler ruby
 
 autocmd FileType make     set noexpandtab
 autocmd FileType python   set noexpandtab
@@ -55,6 +56,8 @@ set grepformat=%f:%l:%m
 map <leader>t :FuzzyFinderTextMate<CR>
 map <leader>b :FuzzyFinderBuffer<CR>
 map <leader>d :execute 'NERDTreeToggle ' . getcwd()<CR>
+map <leader>r :RunSpec<CR>
+map <leader>R :RunSpecs<CR>
 
 
 " allow backspacing over everything in insert mode
@@ -112,6 +115,12 @@ if has("autocmd")
     \ if line("'\"") > 0 && line("'\"") <= line("$") |
     \   exe "normal g`\"" |
     \ endif
+
+  augroup END
+
+  augroup mkd
+
+    autocmd BufRead *.mkd  set ai formatoptions=tcroqn2 comments=n:>
 
   augroup END
 
