@@ -1,6 +1,6 @@
 "
-" Adam Jacob .vimrc
-" Email: adam@opscode.com
+" AJ Christensen's .vimrc
+" Email: aj@opscode.com
 " Last change: 2009 April 22
 "
 " Original:	Bram Moolenaar <Bram@vim.org>
@@ -17,7 +17,6 @@ endif
 set nocompatible
 
 " ADDED BY ME
-set number
 set softtabstop=2
 set shiftwidth=2
 set tabstop=2
@@ -25,7 +24,7 @@ set autoindent
 " Use spaces instead of tabs
 set expandtab
 colorscheme twilight 
-set guifont=Bitstream\ Vera\ Sans\ Mono:h14
+set guifont=Monaco:h12
 set ignorecase
 set vb " turns off visual bell
 set smartindent
@@ -89,7 +88,6 @@ map Q gq
 " Also switch on highlighting the last used search pattern.
 if &t_Co > 2 || has("gui_running")
   syntax on
-  set hlsearch
 endif
 
 " Only do this part when compiled with support for autocommands.
@@ -107,14 +105,6 @@ if has("autocmd")
 
   " For all text files set 'textwidth' to 78 characters.
   autocmd FileType text setlocal textwidth=78
-
-  " When editing a file, always jump to the last known cursor position.
-  " Don't do it when the position is invalid or when inside an event handler
-  " (happens when dropping a file on gvim).
-  autocmd BufReadPost *
-    \ if line("'\"") > 0 && line("'\"") <= line("$") |
-    \   exe "normal g`\"" |
-    \ endif
 
   augroup END
 
