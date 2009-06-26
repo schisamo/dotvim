@@ -23,8 +23,9 @@ set tabstop=2
 set autoindent
 " Use spaces instead of tabs
 set expandtab
-colorscheme twilight 
-set guifont=Monaco:h12
+colorscheme manxome 
+set transparency=60
+set guifont=Inconsolata:h12
 set ignorecase
 set vb " turns off visual bell
 set smartindent
@@ -46,6 +47,7 @@ autocmd FileType python   set noexpandtab
 
 let g:fuzzy_ignore = "*.log"
 let g:fuzzy_matching_limit = 70
+let g:fuzzy_ceiling = 50000
 let mapleader=","
 
 set grepprg=ack
@@ -57,6 +59,7 @@ map <leader>b :FuzzyFinderBuffer<CR>
 map <leader>d :execute 'NERDTreeToggle ' . getcwd()<CR>
 map <leader>r :RunSpec<CR>
 map <leader>R :RunSpecs<CR>
+map <leader>f :Ack
 
 
 " allow backspacing over everything in insert mode
