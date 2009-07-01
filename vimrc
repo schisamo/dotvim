@@ -24,7 +24,6 @@ set autoindent
 " Use spaces instead of tabs
 set expandtab
 colorscheme manxome 
-set transparency=60
 set guifont=Inconsolata:h12
 set ignorecase
 set vb " turns off visual bell
@@ -59,7 +58,7 @@ map <leader>b :FuzzyFinderBuffer<CR>
 map <leader>d :execute 'NERDTreeToggle ' . getcwd()<CR>
 map <leader>r :RunSpec<CR>
 map <leader>R :RunSpecs<CR>
-map <leader>f :Ack
+map <leader>f :Ack 
 
 
 " allow backspacing over everything in insert mode
