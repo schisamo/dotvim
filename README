@@ -11,4 +11,4 @@ Once you are running, in command mode:
 ,t = FuzzyFinderTextmate
 ,b = FuzzyBufferFinder
 
-
+You can use the install rake task to install this in your home directory. In addition to the plugins above, you'll need Consolas, or change guifont to something else (like Monaco).

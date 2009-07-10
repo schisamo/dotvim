@@ -1,12 +1,21 @@
 "
+" Joshua Timberman's dotvim
+" Email: joshua@opscode.com
+" Last change: 2009 July 10
+"
+" based on
 " AJ Christensen's .vimrc
 " Email: aj@opscode.com
+" Last change: 2009 April 22
+"
+" which was based on 
+" Adam Jacob .vimrc
+" Email: adam@opscode.com
 " Last change: 2009 April 22
 "
 " Original:	Bram Moolenaar <Bram@vim.org>
 " Last change:	2002 Sep 19
 "
-
 " When started as "evim", evim.vim will already have done these settings.
 if v:progname =~? "evim"
   finish
@@ -21,10 +30,15 @@ set softtabstop=2
 set shiftwidth=2
 set tabstop=2
 set autoindent
+set number
 " Use spaces instead of tabs
 set expandtab
-colorscheme manxome 
-set guifont=Inconsolata:h12
+set bg=light
+colorscheme default 
+set guifont=Consolas:h12
+set guioptions-=T
+set lines=60
+set columns=150
 set ignorecase
 set vb " turns off visual bell
 set smartindent
