@@ -36,6 +36,7 @@ set expandtab
 set bg=light
 colorscheme default 
 set guifont=Consolas:h12
+" don't show the toolbar.
 set guioptions-=T
 set lines=60
 set columns=150
