@@ -34,12 +34,17 @@ set number
 " Use spaces instead of tabs
 set expandtab
 set bg=light
-colorscheme default 
-set guifont=Consolas:h12
-" don't show the toolbar.
-set guioptions-=T
-set lines=60
-set columns=150
+" Set certain options if a gui is running
+if has("gui_running")
+  set guifont=Consolas:h12
+  set guioptions+=TlRLrb
+  set guioptions-=TlRLrb
+  set lines=60
+  set columns=150
+  colorscheme thegoodluck
+else
+  colorscheme default
+endif
 set ignorecase
 set vb " turns off visual bell
 set smartindent
