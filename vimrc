@@ -31,7 +31,6 @@ set shiftwidth=2
 set tabstop=2
 set autoindent
 set number
-" Use spaces instead of tabs
 set expandtab
 set bg=light
 " Set certain options if a gui is running
@@ -72,7 +71,6 @@ let mapleader=","
 set grepprg=ack
 set grepformat=%f:%l:%m
 
-
 map <leader>t :FuzzyFinderTextMate<CR>
 map <leader>b :FuzzyFinderBuffer<CR>
 map <leader>d :execute 'NERDTreeToggle ' . getcwd()<CR>
@@ -80,7 +78,15 @@ map <leader>r :RunSpec<CR>
 map <leader>R :RunSpecs<CR>
 map <leader>f :Ack 
 
+function! ToggleScratch()
+  if expand('%') == g:ScratchBufferName
+    quit
+  else
+    Sscratch
+  endif
+endfunction
 
+map <leader>s :call ToggleScratch()<CR>
 " allow backspacing over everything in insert mode
 set backspace=indent,eol,start
 
@@ -94,7 +100,7 @@ endif
 set history=50		" keep 50 lines of command line history
 set ruler		" show the cursor position all the time
 set showcmd		" display incomplete commands
-set incsearch		" do incremental searching
+"set incsearch		" do incremental searching
 
 " For Win32 GUI: remove 't' flag from 'guioptions': no tearoff menu entries
 " let &guioptions = substitute(&guioptions, "t", "", "g")
