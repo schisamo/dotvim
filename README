@@ -12,3 +12,13 @@ Once you are running, in command mode:
 ,b = FuzzyBufferFinder
 
 You can use the install rake task to install this in your home directory. In addition to the plugins above, you'll need Consolas, or change guifont to something else (like Monaco).
+
+Windows
+-------
+
+This will also work on Windows. A few notes.
+
+Windows default vimrc location is C:\Users\username\_vimrc.
+User home directory doesn't have plugins, syntax, etc, use C:\Program Files\Vim\vim72.
+PowerShell works for sure. cmd.exe might not.
+May need to start PowerShell/CMD as Administrator to get it to install.
