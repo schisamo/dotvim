@@ -1,5 +1,6 @@
 if ENV['OS'] =~ /Windows.*/
-  vimdir = File.expand_path("C:/Program Files/Vim/vim72")
+  winarc = ENV['PROCESSOR_ARCHITECTURE'] =~ /x86/ ? " (x86)" : ''
+  vimdir = File.expand_path("C:/Program Files#{winarc}/Vim/vim72")
   vimrc  = File.expand_path("~/_vimrc")
 else
   vimdir = File.expand_path("~/.vim")
@@ -18,6 +19,7 @@ task :install do
         end
       end
     end
+    copy("vimrc", "#{vimrc}")
   else
     sh "mkdir -p #{vimdir}" unless FileTest.directory?("#{vimdir}")
     sh "tar -cpf - * | (cd #{vimdir} && tar -xpf -)"
