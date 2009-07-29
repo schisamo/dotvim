@@ -1,0 +1,3 @@
+[submodule "git-vim"]
+	path = git-vim
+	url = git@github.com:fujin/git-vim.git
