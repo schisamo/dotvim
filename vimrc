@@ -58,6 +58,7 @@ map <leader>b :FuzzyFinderBuffer<CR>
 map <leader>d :execute 'NERDTreeToggle ' . getcwd()<CR>
 map <leader>r :RunSpec<CR>
 map <leader>R :RunSpecs<CR>
+map <leader>g :TlistToggle<CR>
 
 
 " allow backspacing over everything in insert mode
