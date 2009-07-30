@@ -24,7 +24,8 @@ task :install do
     sh "mkdir -p #{vimdir}" unless FileTest.directory?("#{vimdir}")
     sh "tar -cpf - * | (cd #{vimdir} && tar -xpf -)"
     puts "Creating link for #{vimrc}"
-    File.symlink("#{vimdir}/vimrc", vimrc) unless File.symlink?(vimrc)
+    File.symlink("#{vimdir}/vimrc", vimrc) unless File.exists?(vimrc)
   end
 end
 
+task :default => :install
