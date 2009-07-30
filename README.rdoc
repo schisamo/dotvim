@@ -21,13 +21,26 @@ FuzzyFinder(Textmate) provides:
 * A TextMate style 'cmd-t' buffer switching interface
 * An 'open buffers' tab-esque interface
 
+Ack provides:
+* Awesome code grepping
+
+Taglist provides:
+* Easy source code browsing
+* Must have exuberant ctags installed
+* Set to auto-populate behind the scenes
+
+Surround provides:
+* Setting or replacing text that surrounds lines
+
+NERD_Commenter provides:
+* Super smart comment control
+
 Gist provides:
-* Ability to interact with http://gist.github.com/
-* Paste a file or selection to a new gist
-* Retrieve your recent gists
-* Retrieve recent gists from other people
+* Integrated gist support
 
 == Commands
+
+=== Git
 [:GitAdd <file>]       git-add <file> or current file if not specified.
 [:GitCommit <args>]    git-commit.
 [:GitStatus]           Show git-status of current file or repository.
@@ -41,37 +54,75 @@ Gist provides:
 [:Git <args>]          Does any git command.
 [:GitVimDiffMerge]     Experimental. Call this command on unmerged file to enter vimdiff mode.
 [:GitVimDiffMergeDone] Call this command after merging.
-[:Gist] post whole text to gist.
-[:'<,'>Gist] post selected text to gist.
-[:Gist -p] post whole text to gist with private.
-[:Gist -a] post whole text to gist with anonymous.
-[:Gist -e] edit the gist. (shoud be work on gist buffer) you can update the gist with :w command on gist buffer.
-[:Gist -e foo.js] edit the gist with name 'foo.js'. (shoud be work on gist buffer)
-[:Gist XXXXX] edit gist XXXXX.
-[:Gist -c XXXXX.] get gist XXXXX and put to clipboard.
-[:Gist -l] list gists from mine.
-[:Gist -l username] list gists from username.
-[:Gist -la] list gists from all.
+
+=== Ack
+[:Ack] Takes options, a pattern, and a directory.  Shows results in a quickbuffer.
+[:AckAdd] Like Ack + grepadd - adds to, rather than replaces, the quickbuffer.
+[:LAck] Ack + lgrep - opens in location-list
+[:LAckAdd] Appends to the location list
+
+=== Tags
+[:TlistOpen] Opens the tag list window
+[:TlistToggle] Toggle the tag list window
+
+=== Surround
+Details follow on the exact semantics, but first, consider the following
+examples.  An asterisk (*) is used to denote the cursor position.
+
+  Old text                  Command     New text ~
+  "Hello *world!"           ds"         Hello world!
+  [123+4*56]/2              cs])        (123+456)/2
+  "Look ma, I'm *HTML!"     cs"<q>      <q>Look ma, I'm HTML!</q>
+  if *x>3 {                 ysW(        if ( x>3 ) {
+  my $str = *whee!;         vlllls'     my $str = 'whee!';
+
+[ds] = Delete surrounding - use the character or a 't' for tag (ds", dst)
+[cs] = Change surrounding - first what to change, then what to change to
+[ys] = Takes a motion and surrounds it with the second argument, like cs
+[s] = In visual mode, wraps the text with the character argument
+
+=== NERD_commenter
+
+[,cc] = Comment the current line, or selected text in visual mode
+[,c ] = Toggle the comment
+[,ci] = Toggles the set of lines individually (like "c ", but assumes each line may have different settings)
+[,cs] = Comment Sexily - up close to the start of each line
+[,cA] = Append a comment to the end of the line
+[,cl] = Comment and align on the left side
+[,cb] = Comment and align on both sides
+[,cu] = Uncomment the selected lines
+
+=== Gist
+[:Gist] = post the whole text to gist
+[:'<,'>Gist] = post the selected text to gist
+[:Gist -p] = post wholet ext to gist with private
+[:Gist -a] = post the whole text to gist with anonymous
+[:Gist -e] = Edit the gist
+[:Gist -e foo.js] = Edit the gist with the name 'foo.js'
+[:Gist XXXXX] = Get gist
+[:Gist -c XXXXX] = Get gist and put to clipboard
+[:Gist -l] = List my gists
+[:Gist -la] = List gists from all
 
 == Keymaps
 [,d] = Toggle NERDtree
 [,t] = FuzzyFinderTextmate
 [,b] = FuzzyBufferFinder
-[, gd] :GitDiff
+[,l] = TListToggle 
+[,gd] :GitDiff
 [,gD] :GitDiff --cached
 [,gs] :GitStatus
 [,gl] :GitLog
 [,ga] :GitAdd
 [,gA] :GitAdd <cfile>
 [,gc] :GitCommit
-[,l] = Toggle TagList
 
 === In git-status buffer
 [<Enter>]    :GitAdd <cfile>
 
 == Rake
 
-You can use the install rake task to install this in your home directory. In addition to the plugins above, you'll need Consolas, or change guifont to something else (like Monaco).
+You can use the rake 'install' task to install this in your home directory.
 
 == Windows
 
@@ -100,4 +151,3 @@ Email: adam@opscode.com
 
 Original:     Bram Moolenaar <Bram@vim.org>
 Last change:  2002 Sep 19
-
