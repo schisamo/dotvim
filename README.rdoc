@@ -1,15 +1,14 @@
 === Dotvim
+
 This is the contents of my .vim directory.  It includes my vimrc, which you should symlink to ~/.vimrc in order
 to get the goodness.
 
-It includes several plugins: Git-vim, NERDtree, FuzzyFinder, FuzzyFinderTextmate, lots of color schemes, updated ruby bindings, and more.
+It includes several plugins: Git-vim, Gist, NERDtree, FuzzyFinder, FuzzyFinderTextmate, lots of color schemes, updated ruby bindings, and more.
 
 To use, copy this directory to ~/.vim and symlink ~/.vim/vimrc to ~/.vimrc.
 
-Once you are running, in command mode: 
-
-
 == Introduction
+
 Git-vim provides:
 * Plugin files for calling git functions from inside Vim
 * Syntax files for git displays
@@ -21,6 +20,12 @@ NerdTree provides:
 FuzzyFinder(Textmate) provides:
 * A TextMate style 'cmd-t' buffer switching interface
 * An 'open buffers' tab-esque interface
+
+Gist provides:
+* Ability to interact with http://gist.github.com/
+* Paste a file or selection to a new gist
+* Retrieve your recent gists
+* Retrieve recent gists from other people
 
 == Commands
 [:GitAdd <file>]       git-add <file> or current file if not specified.
@@ -36,6 +41,17 @@ FuzzyFinder(Textmate) provides:
 [:Git <args>]          Does any git command.
 [:GitVimDiffMerge]     Experimental. Call this command on unmerged file to enter vimdiff mode.
 [:GitVimDiffMergeDone] Call this command after merging.
+[:Gist] post whole text to gist.
+[:'<,'>Gist] post selected text to gist.
+[:Gist -p] post whole text to gist with private.
+[:Gist -a] post whole text to gist with anonymous.
+[:Gist -e] edit the gist. (shoud be work on gist buffer) you can update the gist with :w command on gist buffer.
+[:Gist -e foo.js] edit the gist with name 'foo.js'. (shoud be work on gist buffer)
+[:Gist XXXXX] edit gist XXXXX.
+[:Gist -c XXXXX.] get gist XXXXX and put to clipboard.
+[:Gist -l] list gists from mine.
+[:Gist -l username] list gists from username.
+[:Gist -la] list gists from all.
 
 == Keymaps
 [,d] = Toggle NERDtree
@@ -48,7 +64,40 @@ FuzzyFinder(Textmate) provides:
 [,ga] :GitAdd
 [,gA] :GitAdd <cfile>
 [,gc] :GitCommit
+[,l] = Toggle TagList
 
 === In git-status buffer
 [<Enter>]    :GitAdd <cfile>
+
+== Rake
+
+You can use the install rake task to install this in your home directory. In addition to the plugins above, you'll need Consolas, or change guifont to something else (like Monaco).
+
+== Windows
+
+This will also work on Windows. A few notes.
+
+Windows default vimrc location is C:\Users\username\_vimrc.
+User home directory doesn't have plugins, syntax, etc, use C:\Program Files\Vim\vim72.
+PowerShell works for sure. cmd.exe might not.
+May need to start PowerShell/CMD as Administrator to get it to install.
+
+== Credits
+
+People who have worked on this Vim configuration are:
+
+Joshua Timberman
+http://github.com/jtimberman/dotvim
+Email: joshua@opscode.com
+
+AJ Christensen
+http://github.com/fujin/dotvim
+Email: aj@opscode.com
+
+Adam Jacob
+http://github.com/adamhjk/adam-vim/
+Email: adam@opscode.com
+
+Original:     Bram Moolenaar <Bram@vim.org>
+Last change:  2002 Sep 19
 
