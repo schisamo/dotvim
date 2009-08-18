@@ -25,7 +25,11 @@ set autoindent
 " Use spaces instead of tabs
 set expandtab
 colorscheme twilight 
-set guifont=Bitstream\ Vera\ Sans\ Mono:h14
+if has("gui_gtk2")
+  set guifont=Bitstream\ Vera\ Sans\ Mono\ 14
+else
+  set guifont=Bitstream\ Vera\ Sans\ Mono:h14
+endif
 set ignorecase
 set vb " turns off visual bell
 set smartindent
