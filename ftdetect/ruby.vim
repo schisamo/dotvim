@@ -7,6 +7,9 @@ au BufNewFile,BufRead *.builder,*.rxml,*.rjs		set filetype=ruby
 " Rakefile
 au BufNewFile,BufRead [rR]akefile,*.rake		set filetype=ruby
 
+" Capfile
+au BufNewFile,BufRead [Cp]apfile,*.cap		set filetype=ruby
+
 " Rantfile
 au BufNewFile,BufRead [rR]antfile,*.rant		set filetype=ruby
 
@@ -15,3 +18,4 @@ au BufNewFile,BufRead .irbrc,irbrc			set filetype=ruby
 
 " eRuby
 au BufNewFile,BufRead *.erb,*.rhtml			set filetype=eruby
+
