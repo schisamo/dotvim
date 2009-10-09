@@ -40,6 +40,8 @@ set statusline+=0x%-8B                       " character value
 set statusline+=%-14(%l,%c%V%)               " line, character
 set statusline+=%<%P                         " file position
 
+match DiffDelete /\s\s*$/
+
 compiler ruby
 
 autocmd FileType make     set noexpandtab
