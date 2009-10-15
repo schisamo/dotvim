@@ -10,6 +10,9 @@ au BufNewFile,BufRead [rR]akefile,*.rake		set filetype=ruby
 " Capfile
 au BufNewFile,BufRead [Cp]apfile,*.cap		set filetype=ruby
 
+" Thorfile
+au BufNewFile,BufRead [Tt]orfile,*.thor		set filetype=ruby
+
 " Rantfile
 au BufNewFile,BufRead [rR]antfile,*.rant		set filetype=ruby
 
