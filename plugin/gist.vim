@@ -1,8 +1,7 @@
-"=============================================================================
 " File: gist.vim
 " Author: Yasuhiro Matsumoto <mattn.jp@gmail.com>
-" Last Change: 01-Sep-2009.
-" Version: 2.8
+" Last Change: 26-Oct-2009.
+" Version: 3.0
 " WebPage: http://github.com/mattn/gist-vim/tree/master
 " Usage:
 "
@@ -386,7 +385,7 @@ function! s:GistPost(user, token, content, private)
   endif
 
   if a:private
-    call add(query, 'private=on')
+    call add(query, 'action_button=private')
   endif
   let squery = printf(join(query, '&'),
     \ s:encodeURIComponent(ext),
@@ -407,7 +406,7 @@ function! s:GistPost(user, token, content, private)
   call delete(file)
   let res = matchstr(split(res, '\(\r\?\n\|\r\n\?\)'), '^Location: ')
   let res = substitute(res, '^.*: ', '', '')
-  if len(res) > 0 && res =~ '^http:\/\/gist\.github\.com\/\d' 
+  if len(res) > 0 && res =~ '^https:\/\/gist\.github\.com\/' 
     echo 'Done: '.res
   else
     echoerr 'Post failed'
@@ -426,7 +425,7 @@ function! s:GistPostBuffers(user, token, private)
     call add(query, '%.0s%.0s')
   endif
   if a:private
-    call add(query, 'private=on')
+    call add(query, 'action_button=private')
   endif
   let squery = printf(join(query, "&"),
     \ s:encodeURIComponent(a:user),
@@ -459,8 +458,9 @@ function! s:GistPostBuffers(user, token, private)
   silent! exec "buffer! ".bn
 
   let file = tempname()
-  exec 'redir! > '.file 
-  silent echo squery
+  exec 'redir! > '.file
+  sile 100 15989  100 15989    0     0  46752      0 --:--:-- --:--:-- --:--:-- 87691
+nt echo squery
   redir END
   echo "Posting it to gist... "
   let quote = &shellxquote == '"' ?  "'" : '"'
