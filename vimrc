@@ -40,14 +40,14 @@ set statusline+=0x%-8B                       " character value
 set statusline+=%-14(%l,%c%V%)               " line, character
 set statusline+=%<%P                         " file position
 
-match DiffDelete /\s\s*$/
+match NonText /\s\s*$/
 
 compiler ruby
 
 autocmd FileType make     set noexpandtab
 autocmd FileType python   set noexpandtab
 
-let g:fuzzy_ignore = "*.log" 
+let g:fuzzy_ignore = "*.log"
 let g:fuzzy_matching_limit = 70
 let g:fuzzy_ceiling = 50000
 let mapleader=","
@@ -66,8 +66,9 @@ map <leader>b :FuzzyFinderBuffer<CR>
 map <leader>d :execute 'NERDTreeToggle ' . getcwd()<CR>
 map <leader>r :RunSpec<CR>
 map <leader>R :RunSpecs<CR>
-map <leader>f :Ack 
+map <leader>f :Ack  
 map <leader>l :TlistToggle<CR>
+map <leader>ws :%s/\s\+$//<CR>
 
 function! ToggleScratch()
   if expand('%') == g:ScratchBufferName

@@ -116,6 +116,7 @@ examples.  An asterisk (*) is used to denote the cursor position.
 [,ga] :GitAdd
 [,gA] :GitAdd <cfile>
 [,gc] :GitCommit
+[,ws] Remove trailing whitespace
 
 === In git-status buffer
 [<Enter>]    :GitAdd <cfile>
