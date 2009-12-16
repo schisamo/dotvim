@@ -17,7 +17,7 @@ set expandtab
 set bg=light
 " Set certain options if a gui is running
 if has("gui_running")
-  set guifont=Consolas:h12
+  set guifont=Consolas:h14
   set guioptions+=TlRLrb
   set guioptions-=TlRLrb
   set lines=60
