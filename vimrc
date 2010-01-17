@@ -17,7 +17,7 @@ set expandtab
 set bg=light
 " Set certain options if a gui is running
 if has("gui_running")
-  set guifont=Consolas:h14
+  set guifont=Inconsolata:h14
   set guioptions+=TlRLrb
   set guioptions-=TlRLrb
   set lines=60
@@ -46,6 +46,8 @@ compiler ruby
 
 autocmd FileType make     set noexpandtab
 autocmd FileType python   set noexpandtab
+autocmd FileType mkd      let b:surround_42 = "**\r**"
+autocmd FileType mkd      let b:surround_95 = "__\r__"
 
 let g:fuzzy_ignore = "*.log"
 let g:fuzzy_matching_limit = 70
@@ -69,6 +71,8 @@ map <leader>R :RunSpecs<CR>
 map <leader>f :Ack  
 map <leader>l :TlistToggle<CR>
 map <leader>ws :%s/\s\+$//<CR>
+map <Leader>s <Plug>Vsurround
+map <Leader>S <Plug>Vsurround
 
 function! ToggleScratch()
   if expand('%') == g:ScratchBufferName
@@ -78,7 +82,7 @@ function! ToggleScratch()
   endif
 endfunction
 
-map <leader>s :call ToggleScratch()<CR>
+map <leader>ts :call ToggleScratch()<CR>
 " allow backspacing over everything in insert mode
 set backspace=indent,eol,start
 
