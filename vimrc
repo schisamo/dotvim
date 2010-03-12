@@ -39,6 +39,7 @@ set statusline+=%-3.3n\                      " buffer number
 set statusline+=%f\                          " filename
 set statusline+=%h%m%r%w                     " status flags
 set statusline+=\[%{strlen(&ft)?&ft:'none'}] " file type
+set statusline+=%{fugitive#statusline()}     " fugitive
 set statusline+=%=                           " right align remainder
 set statusline+=0x%-8B                       " character value
 set statusline+=%-14(%l,%c%V%)               " line, character
@@ -114,6 +115,15 @@ if has("autocmd")
   " Put these in an autocmd group, so that we can delete them easily.
   augroup vimrcEx
   au!
+
+  " Settings for raw text editing
+  autocmd BufRead *\.txt setlocal formatoptions=l
+  autocmd BufRead *\.txt setlocal lbr
+  autocmd BufRead *\.txt map j gj
+  autocmd BufRead *\.txt map k gk
+  autocmd BufRead *\.txt setlocal smartindent
+  autocmd BufRead *\.txt setlocal spell spelllang=en_us
+  
 
   " For all text files set 'textwidth' to 78 characters.
   autocmd FileType text setlocal textwidth=78
