@@ -8,9 +8,9 @@ To use, copy this directory to ~/.vim and symlink ~/.vim/vimrc to ~/.vimrc.
 Once you are running, in command mode: 
 
 == Introduction
-Git-vim provides:
-* Plugin files for calling git functions from inside Vim
-* Syntax files for git displays
+Fugitive provides:
+* Super-duper git functionality.
+* http://github.com/tpope/vim-fugitive
 
 NerdTree provides:
 * A TextMate style 'project drawer'
@@ -103,6 +103,11 @@ examples.  An asterisk (*) is used to denote the cursor position.
 [:Gist -l] = List my gists
 [:Gist -la] = List gists from all
 
+=== Textile
+
+[,rp] = :TextilePreview - render textile to a temp file, open in browser
+[,rt] = :TextileRenderTab - render textile to a new tab
+[,rf] = :TextileREdnerFile - render to a file
 
 == Keymaps
 [,d] = Toggle NERDtree
