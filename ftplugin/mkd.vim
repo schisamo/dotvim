@@ -12,6 +12,8 @@ ruby << EOF
     f.write(BlueCloth.new(t).to_html)
   end
   system("open #{html_file}")
+  sleep 3
+  File.delete(html_file)
 EOF
 
 endfunction
