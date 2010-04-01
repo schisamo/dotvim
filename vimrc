@@ -25,6 +25,7 @@ if has("gui_running")
   colorscheme thegoodluck
 else
   colorscheme default
+endif
 set ignorecase
 set vb " turns off visual bell
 set smartindent
@@ -74,6 +75,7 @@ map <leader>l :TlistToggle<CR>
 map <leader>ws :%s/\s\+$//<CR>
 map <Leader>s <Plug>Vsurround
 map <Leader>S <Plug>Vsurround
+map <Leader>om :call PreviewMKD()<CR>
 
 function! ToggleScratch()
   if expand('%') == g:ScratchBufferName
