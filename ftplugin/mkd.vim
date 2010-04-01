@@ -1,3 +1,6 @@
+" Requires bluecloth rubygem.
+" Original author  http://mathias-biilmann.net/2009/1/markdown-preview-in-vim
+" Leader mapped in vimrc
 function! PreviewMKD()
 ruby << EOF
   require 'rubygems'
