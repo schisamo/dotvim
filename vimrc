@@ -22,7 +22,7 @@ if has("gui_running")
   set guioptions-=TlRLrb
   set lines=60
   set columns=150
-  colorscheme thegoodluck
+  colorscheme ir_black
 else
   colorscheme default
 endif
@@ -65,7 +65,6 @@ let g:gist_detect_filetype = 1
 set grepprg=ack
 set grepformat=%f:%l:%m
 
-map <leader>t :FuzzyFinderTextMate<CR>
 map <leader>b :FuzzyFinderBuffer<CR>
 map <leader>d :execute 'NERDTreeToggle ' . getcwd()<CR>
 map <leader>r :RunSpec<CR>
