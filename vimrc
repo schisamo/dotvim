@@ -49,7 +49,6 @@ autocmd FileType make     set noexpandtab
 autocmd FileType python   set noexpandtab
 autocmd FileType mkd      let b:surround_42 = "**\r**"
 autocmd FileType mkd      let b:surround_95 = "__\r__"
-autocmd FileType mkd      colorscheme eclipse
 
 let g:fuzzy_ignore = "*.log"
 let g:fuzzy_matching_limit = 70
