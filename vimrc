@@ -26,6 +26,7 @@ if has("gui_running")
 else
   colorscheme default
 endif
+set hidden
 set ignorecase
 set vb " turns off visual bell
 set smartindent
@@ -69,7 +70,6 @@ map <leader>d :execute 'NERDTreeToggle ' . getcwd()<CR>
 map <leader>r :RunSpec<CR>
 map <leader>R :RunSpecs<CR>
 map <leader>f :Ack  
-map <leader>l :TlistToggle<CR>
 map <leader>ws :%s/\s\+$//<CR>
 map <Leader>s <Plug>Vsurround
 map <Leader>S <Plug>Vsurround
