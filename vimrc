@@ -61,6 +61,7 @@ let Tlist_Process_File_Always=1
 let Tlist_Show_Menu=1
 let Tlist_Enable_Fold_Column=0
 let g:gist_detect_filetype = 1
+let g:LustyJugglerSuppressRubyWarning = 1
 
 set grepprg=ack
 set grepformat=%f:%l:%m
