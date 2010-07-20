@@ -17,11 +17,11 @@ set expandtab
 set bg=light
 " Set certain options if a gui is running
 if has("gui_running")
-  set guifont=Inconsolata:h14
+  set guifont=Menlo\ Regular:h14
   set guioptions+=TlRLrb
   set guioptions-=TlRLrb
   set lines=60
-  set columns=150
+  set columns=120
   colorscheme ir_black
 else
   colorscheme default
@@ -89,6 +89,7 @@ map <leader>ts :call ToggleScratch()<CR>
 set backspace=indent,eol,start
 
 set backupdir=~/.vimswaps,/tmp
+set directory=~/.vimswaps,/tmp
 
 if has("vms")
   set nobackup		" do not keep a backup file, use versions instead
