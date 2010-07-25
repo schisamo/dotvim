@@ -51,9 +51,6 @@ autocmd FileType python   set noexpandtab
 autocmd FileType mkd      let b:surround_42 = "**\r**"
 autocmd FileType mkd      let b:surround_95 = "__\r__"
 
-let g:fuzzy_ignore = "*.log"
-let g:fuzzy_matching_limit = 70
-let g:fuzzy_ceiling = 50000
 let mapleader=","
 
 let Tlist_GainFocus_On_ToggleOpen=1
@@ -62,15 +59,16 @@ let Tlist_Show_Menu=1
 let Tlist_Enable_Fold_Column=0
 let g:gist_detect_filetype = 1
 let g:LustyJugglerSuppressRubyWarning = 1
+let g:speckyWindowType = 1
+let g:speckyRunSpecCmd = "spec -cbfs"
+let g:speckyRunSpecKey = "<leader>r"
+let g:speckySpecSwitcherKey = "<leader>x"
 
 set grepprg=ack
 set grepformat=%f:%l:%m
 
-map <leader>b :FuzzyFinderBuffer<CR>
 map <leader>d :execute 'NERDTreeToggle ' . getcwd()<CR>
-map <leader>r :RunSpec<CR>
-map <leader>R :RunSpecs<CR>
-map <leader>f :Ack  
+map <leader>f :Ack
 map <leader>ws :%s/\s\+$//<CR>
 map <Leader>s <Plug>Vsurround
 map <Leader>S <Plug>Vsurround
@@ -137,7 +135,6 @@ if has("autocmd")
   autocmd BufRead *\.txt map k gk
   autocmd BufRead *\.txt setlocal smartindent
   autocmd BufRead *\.txt setlocal spell spelllang=en_us
-  
 
   " For all text files set 'textwidth' to 78 characters.
   autocmd FileType text setlocal textwidth=78
