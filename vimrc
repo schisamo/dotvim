@@ -73,6 +73,8 @@ map <leader>ws :%s/\s\+$//<CR>
 map <Leader>s <Plug>Vsurround
 map <Leader>S <Plug>Vsurround
 map <Leader>om :call PreviewMKD()<CR>
+map <Leader>cz :new<CR>:ConqueTerm zsh<CR>
+map <Leader>cx :tab new<CR>:ConqueTerm zsh<CR>
 
 function! ToggleScratch()
   if expand('%') == g:ScratchBufferName
