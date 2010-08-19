@@ -68,7 +68,7 @@ set grepprg=ack
 set grepformat=%f:%l:%m
 
 map <leader>d :execute 'NERDTreeToggle ' . getcwd()<CR>
-map <leader>f :Ack
+map <leader>f :Ack<Space>
 map <leader>ws :%s/\s\+$//<CR>
 map <Leader>s <Plug>Vsurround
 map <Leader>S <Plug>Vsurround
