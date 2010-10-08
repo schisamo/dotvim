@@ -13,10 +13,10 @@ set shiftwidth=2
 set tabstop=2
 set autoindent
 set number
-set expandtab
 set bg=light
 " Set certain options if a gui is running
-if has("gui_running")
+" &term =~ "xterm-256"
+if has("gui_running") || &term =~ "-256color"
   set guifont=Menlo\ Regular:h14
   set guioptions+=TlRLrb
   set guioptions-=TlRLrb
