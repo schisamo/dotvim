@@ -16,13 +16,15 @@ set number
 set bg=light
 " Set certain options if a gui is running
 " &term =~ "xterm-256"
-if has("gui_running") || &term =~ "-256color"
+if has("gui_running")
   set guifont=Menlo\ Regular:h14
   set guioptions+=TlRLrb
   set guioptions-=TlRLrb
   set lines=60
   set columns=120
   colorscheme ir_black
+elseif &term =~ "-256color"
+	colorscheme ir_black
 else
   colorscheme default
 endif
