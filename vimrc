@@ -31,6 +31,7 @@ endif
 set hidden
 set ignorecase
 set vb " turns off visual bell
+set expandtab
 set smartindent
 set laststatus=2
 set statusline=
