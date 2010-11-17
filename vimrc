@@ -19,7 +19,7 @@ set bg=light
 if has("gui_running")
   set guifont=Menlo\ Regular:h14
   set guioptions+=TlRLrb
-  set guioptions-=TlRLrb
+  set guioptions-=TlLb
   set lines=60
   set columns=120
   colorscheme ir_black
