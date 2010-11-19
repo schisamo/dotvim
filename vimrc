@@ -18,7 +18,7 @@ set bg=light
 " &term =~ "xterm-256"
 if has("gui_running")
   set guifont=Menlo\ Regular:h14
-  set guioptions+=TlRLrb
+  set guioptions+=TlLb
   set guioptions-=TlLb
   set lines=60
   set columns=120
